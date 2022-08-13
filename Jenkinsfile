@@ -1,8 +1,8 @@
 pipeline {
     agent any
-//     tools {
-//         maven 'Apache Maven 3.6.3'
-//     }
+    tools {
+        maven 'Maven 3.6.3'
+    }
     stages {
        stage('Hi') {
             steps {
@@ -11,7 +11,7 @@ pipeline {
         }
 	   stage('git') {
             steps {
-                git branch: 'main', url: 'https://github.com/coolgourav147/spring-boot-war-example.git'
+                sh "git clone https://github.com/coolgourav147/spring-boot-war-example.git"
             }
         }
 		stage('test') {
