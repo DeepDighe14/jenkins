@@ -9,7 +9,7 @@ pipeline {
                 echo 'Hi ! Started implementning your CI/CD pipeline !'
             }
         }
-		stage('git') {
+	  stage('git') {
             steps {
                 git branch: 'main', url: 'https://github.com/coolgourav147/spring-boot-war-example.git'
             }
@@ -33,7 +33,5 @@ pipeline {
             steps {
                 deploy adapters: [tomcat9(credentialsId: '01026daa-2d49-408d-8b4c-48f0ff46a92a', path: '', url: 'http://localhost:8080')], contextPath: '/app', onFailure: false, war: 'archiveArtifacts artifacts: \'**/*.war\', followSymlinks: false'
             }
-        }
-    }
-  }
+       }
 }
