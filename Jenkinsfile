@@ -9,13 +9,6 @@ pipeline {
                 echo 'Hi ! Started implementning your CI/CD pipeline !'
             }
         }
-		stage ('Initialize') {
-            steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                '''
-            }
 		stage('git') {
             steps {
                 git branch: 'main', url: 'https://github.com/coolgourav147/spring-boot-war-example.git'
