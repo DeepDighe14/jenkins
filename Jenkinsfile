@@ -34,4 +34,5 @@ pipeline {
                 deploy adapters: [tomcat9(credentialsId: '01026daa-2d49-408d-8b4c-48f0ff46a92a', path: '', url: 'http://localhost:8080')], contextPath: '/app', onFailure: false, war: 'archiveArtifacts artifacts: \'**/*.war\', followSymlinks: false'
             }
        }
+   }
 }
