@@ -4,12 +4,12 @@ pipeline {
         maven 'Maven 3.6.3'
     }
     stages {
-      stage('Hi') {
+       stage('Hi') {
             steps {
-                echo 'Hi ! Started implementning your CI/CD pipeline !'
+                echo "Hi ! Started implementning your CI/CD pipeline !"
             }
         }
-	  stage('git') {
+	   stage('git') {
             steps {
                 git branch: 'main', url: 'https://github.com/coolgourav147/spring-boot-war-example.git'
             }
@@ -24,7 +24,7 @@ pipeline {
                 sh "mvn build"
             }
         }
-				stage('archival') {
+		stage('archival') {
             steps {
                 archiveArtifacts artifacts: '**/*.war', followSymlinks: false
             }
